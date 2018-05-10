@@ -1,0 +1,20 @@
+<ion-view view-title="Directory" align-title="left" class="single_page">
+
+
+    <!--<ion-tabs tabs-swipable class="tabs-striped tabs-top tabs-background-dark tabs-color-energized slide-left-right" ng-class="{reverse: currentTab < previousTab}">-->
+
+    <!--<ion-tab title="{{category.category_title}}" ng-repeat="category in categories" ng-init="cat.category_id=category.id">-->
+    <!--<ion-nav-view>-->
+    <ion-pane>
+        <ion-content padding="true" class="directory-index">
+            <div class="card">
+                <div class="item item-text-wrap ng-binding" ng-click="directory_cat(0)">
+                    ALL <i class="ion-icon ion-android-arrow-dropright-circle"></i>                
+                </div>
+                <div class="item item-text-wrap" ng-repeat="category in categories" ng-click="directory_cat($index + 1)">
+                    {{category.category_title}} <i class="ion-icon ion-android-arrow-dropright-circle"></i>                
+                </div>
+            </div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

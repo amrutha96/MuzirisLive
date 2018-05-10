@@ -1,0 +1,89 @@
+<ion-view view-title="Muziris<span>live</span News" align-title="left" class="home_page">
+    <ion-pane>
+        <ion-nav-view name="Breaking News">
+            <ion-content ng-controller="homeController"  padding="true" on-swipe-right="goBack()" on-swipe-left="goForward()">
+                <ion-refresher
+                    pulling-text="Pull to refresh..."
+                    on-refresh="doRefresh('breaking')">
+                </ion-refresher>
+
+
+                <ion-list class="padding-top" >
+                    
+                    <ion-slide-box ng-show="sliders" class="main-slider" on-slide-changed="slideChanged(index)" does-continue="true" slide-interval="3000" auto-play="true">
+                        <ion-slide ng-repeat="slider in sliders" ng-init="updateSlider()">
+                            <img ng-show="slider.slider_image" ng-class="'img-responsive'" ng-src="{{base_url + slider.slider_image}}">
+                            <img ng-hide="slider.featured" ng-class="'img-responsive'" ng-src="img/default-image.jpg">
+                            <a class="slider_title" ng-href="#/app/single_news/{{slider.id}}/{{slider.category_id}}" >{{slider.title|cut:true:100:'...'}}</a>
+                        </ion-slide>
+
+                   
+                        
+                    </ion-slide-box>
+
+
+
+                    <div class="cat_news" ng-repeat="news in groups">
+
+                        <div class="row">
+                            <h4 class="news-titles">{{news.data[0].category_title}}</h4>
+                        </div>
+
+                        <div  class="list-news-home  news" ng-repeat="group in news.data" ng-class="{'last':($index==(news.data.length-1))}">
+                            <ion-item class="item">
+                                <div class="list-news">
+                                    
+                                    <div class="sigle-item-desc">
+                                        <div class="inner-box"><div class="content-desc"><a ng-href="#/app/single_news/{{group.id}}/{{group.category_id}}" ><h2>{{group.title|cut:true:100:'...'}}</h2></a></div></div>
+                                        <div class="time-category"> <span class="time">{{group.date_modified|timecalculator:group.date}} </span><!--<span class="catgory"> {{group.category_title}}</span>-->                                        </div>
+                                        <div class="list-section-image">  
+                                        <div class="image">
+                                            <a ng-show="group.featured" ng-href="#/app/single_news/{{group.id}}/{{group.category_id}}" >
+                                                <img ng-show="group.featured" loading-src="img/default-image_small.jpg" class="img-responsive" ng-src="{{base_url + group.thumb}}">
+                                            </a>
+                                            <a ng-hide="group.featured" ng-href="#/app/single_news/{{group.id}}/{{group.category_id}}" >
+                                                <img ng-hide="group.featured" src="img/default-image_small.jpg" class="img-responsive" >
+                                            </a>
+                                        </div>
+                                    </div>
+                                        <div class="list-section-content" ng-bind-html="group.contents|cut:true:95:'..'">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </ion-item>
+                        </div>
+                        <div class="readmore-section">
+                            <a class="readmore" ng-show="news.is_next_available"  ng-click="load_next($index)">Read More</a>
+                        </div>
+                        <div class="clearfix"></div>
+<hr class="news_divide"/>
+                    </div>
+
+
+
+
+                </ion-list>  
+            </ion-content>
+            <div class="fixed-outside" ng-show="ads">
+                <ion-slide-box class="footer_slider" on-slide-changed="slideHasChanged(index)" does-continue="true" slide-interval="4000" auto-play="true" show-pager="false">
+                        <ion-slide ng-repeat="slider in ads" ng-init="updateSlider()">
+                            <img ng-show="slider.banner_sm" ng-class="'img-responsive'" ng-src="{{base_url + slider.banner_sm}}" ng-click="popoverquantity($index)">
+                            <img ng-hide="slider.banner_sm" ng-class="'img-responsive'" ng-src="img/default-image.jpg">
+                        </ion-slide>
+
+                   
+                        
+                    </ion-slide-box>
+
+            </div>
+        </ion-nav-view>
+
+
+
+    </ion-pane>
+    <!--</ion-content>-->
+    <!--    <ion-footer-bar class="bar bar-hp bar-footer" align-title="left">
+            <h1 class="title">Your Credit Balance: 200pts</h1>
+        </ion-footer-bar>-->
+</ion-view>

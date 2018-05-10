@@ -1,0 +1,62 @@
+<ion-view view-title="News" align-title="left" class="single_page">
+    <ion-nav-buttons side="left">
+        <button class="button ion-android-arrow-back button-clear back-button" ng-click="myGoBack();"></button>
+        <!--<h4 class="food-name">Food Menu</h4>-->
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear button-light username" ng-click="shareNews()"><span></span><i class="custom_icon icon ion-android-share-alt"></i></button>
+        <button class="button button-icon button-clear button-light username"><span></span><i class="custom_icon icon ion-android-more-vertical"></i></button>
+    </ion-nav-buttons>
+    <!--<ion-pane>-->
+    <ion-content class="paper" ng-controller="singleNewsController" on-swipe-right="onSwipeRight()" on-swipe-left="onSwipeLeft()">
+        <div class="" ng-repeat="group in groups">
+
+
+            <div class="single-page">
+                <div class="single-image">
+                    <img ng-show="group.featured" loading-src="img/default-image.jpg"  class="img-responsive" ng-src="{{base_url + group.featured}}">
+                </div>
+                <div class="single-content">
+                    <p>
+                        {{group.title}}
+                    </p>
+
+                </div>
+                <div class="single-main-content">
+                    <div class="time-category single-time"> 
+                        <span class="time">{{group.date}} | </span>
+                        <span class="catgory"> {{group.category_title}}</span>
+                    </div>
+                    <p ng-bind-html="group.contents">
+                        <!--{{}}-->
+
+                    </p>
+                    <iframe ng-show="group.youtube_link" class="img-responsive" ng-src="{{group.youtube_link|youtubeEmbedder}}" frameborder="0"></iframe>
+                </div>
+
+
+
+                <div class="border-bottom-section"></div>
+            </div>
+        </div>
+        <div class="related-topics">
+            <h3>   Related topics</h3>
+
+            <section>    
+                <ul class="related-news">
+
+
+                    <li ng-repeat="related in related_news" ><a ng-href="#/app/single_news/{{related.id}}/{{related.category_id}}">
+                            {{related.title}}
+                        </a>
+                    </li>
+
+                </ul>
+            </section>
+        </div>
+        <!--    <ion-footer-bar class="bar bar-hp bar-footer" align-title="left">
+                <h1 class="title">Your Credit Balance: 200pts</h1>
+            </ion-footer-bar>-->
+    </ion-content>
+    <!--</ion-pane>-->
+</ion-view>

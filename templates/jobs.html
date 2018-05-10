@@ -1,0 +1,163 @@
+<ion-view view-title="Jobs" align-title="left" class="jobs_page">
+
+    <ion-pane>
+        <ion-tabs class="tabs-striped tabs-top tabs-background-dark tabs-color-energized">
+
+            <ion-tab title="Government Jobs" ui>
+                <ion-nav-view name="Government Jobs">
+
+                    <ion-content padding="true" class="job-section">
+                        <ion-refresher
+                            pulling-text="Pull to refresh..."
+                            on-refresh="doRefresh('job')">
+                        </ion-refresher>
+                        <ion-list>
+
+
+                            <div class="list-news-home" ng-repeat="group in filteredEntries = (groups| filter:{ category_id: '8'})">
+                                <ion-item ng-click="toggleGroup(group)"  ng-class="{'ng-hide': isGroupShown(group)}">
+                                    <i class="icon" ng-class="isGroupShown(group) ? '' : ''"></i>
+                                    <div class="list-news">
+                                        <div class="sigle-item-desc">
+                                            <div class="inner-box"><div class="content-desc">  <a href="#"><h5>{{group.job_title}}</h5></a>
+                                                    <p ng-bind-html="group.job_description | cut:false:88:'...<a>Read More</a>'">
+                                                    </p>
+                                                </div> </div>
+                                            <div class="time-category"> <span class="time">{{group.date_modified|timecalculator:group.posted_date}}  | </span><span class="catgory"> {{group.category_title}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ion-item>
+                                <ion-item class="item-accordion"                                   
+                                          ng-show="isGroupShown(group)">
+                                    <div class="job-desc">
+                                        <div class="single-image">
+                                            <img class="img-responsive" ng-src="{{group.src}}">
+                                        </div>
+                                        <div class="single-content">
+                                            <p>
+                                                {{group.job_title}}
+                                            </p>
+
+                                        </div>
+                                        <div class="detailed-desc">
+                                            <div> 
+                                                <span class="desc_title">Job Description :</span> <span ng-bind-html="group.job_description">
+                                                </span>
+                                            </div>
+                                            <div><span class="desc_title"> Last Date :</span><span ng-bind-html="group.last_date">
+                                                </span>
+                                            </div>
+                                            <div><span class="desc_title">Skills : </span><span ng-bind-html="group.skills">
+                                                </span></div>
+                                            <div class="job-contact" ng-if="group.contact_email || group.phone || group.contact_website">
+                                                <h6> Contact</h6>
+                                                <div ng-if="group.contact_email"><span class="desc_title">Email:</span><span ng-bind-html="group.contact_email"></span></div>
+                                                <div ng-if="group.phone"> <span class="desc_title">Phone Number:</span><span ng-bind-html="group.phone"></span></div>
+                                                <div ng-if="group.contact_website"> <span class="desc_title">Website:</span><a target="_blank" ng-href="{{group.contact_website}}"><span ng-bind-html="group.contact_website"></span></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="single-main-content" style="clear: left;">
+                                            <div class="time-category single-time job-post-time"> 
+                                                <span class="time">{{group.date_modified|timecalculator:group.posted_date}} | </span>
+                                                <span class="catgory"> {{group.category_title}}</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </ion-item>
+                            </div>
+                        </ion-list>  
+                    </ion-content>
+                </ion-nav-view>
+            </ion-tab>
+
+            <ion-tab title="Private Jobs" ui-sref="home">
+                <ion-nav-view name="Private Jobs">
+                    <ion-content padding="true" class="private-jobs job-section ">
+                        <ion-refresher
+                            pulling-text="Pull to refresh..."
+                            on-refresh="doRefresh('job')">
+                        </ion-refresher>
+                        <ion-list>
+
+
+                            <div class="list-news-home" ng-repeat="group in filteredEntries = (groups| filter:{ category_id: '11'})">
+                                <ion-item ng-click="toggleGroup(group)"  ng-class="{'ng-hide': isGroupShown(group)}">
+                                    <i class="icon" ng-class="isGroupShown(group) ? '' : ''"></i>
+
+
+                                    <div class="list-news">
+
+                                        <div class="sigle-item-desc">
+                                            <div class="inner-box"><div class="content-desc">  <a href="#"><p>{{group.job_title}}</p></a>
+                                                    <p ng-bind-html="group.job_description | cut:false:88:'...<a>Read More</a>'">
+                                                    </p>
+                                                </div> </div>
+                                            <div class="time-category"> <span class="time">{{group.date_modified|timecalculator:group.posted_date}}  | </span><span class="catgory"> {{group.category_title}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </ion-item>
+                                <ion-item class="item-accordion"                                   
+                                          ng-show="isGroupShown(group)">
+                                    <div class="job-desc">
+                                        <div class="single-image">
+                                            <img class="img-responsive" ng-src="{{group.src}}">
+                                        </div>
+                                        <div class="single-content">
+                                            <p>
+                                                {{group.job_title}}
+                                            </p>
+
+                                        </div>
+                                        <div class="detailed-desc">
+                                            <div> 
+                                                Job Description : <span ng-bind-html="group.job_description">
+                                                </span>
+                                            </div>
+                                            <div> Last Date : <span ng-bind-html="group.last_date">
+                                                </span>
+                                            </div>
+                                            <!--                                            <div>Posted Date : <span ng-bind-html="group.posted_date">
+                                            
+                                            
+                                                                                            </span>
+                                                                                        </div>-->
+                                            <div>   Skills :  <span ng-bind-html="group.skills">
+
+
+                                                </span></div>
+                                            <div class="job-contact" ng-if="group.contact_email || group.phone || group.contact_website">
+                                                <h6> Contact</h6>
+                                                <div ng-if="group.contact_email"><span class="desc_title">Email:</span><span ng-bind-html="group.contact_email"></span></div>
+                                                <div ng-if="group.phone"> <span class="desc_title">Phone Number:</span><span ng-bind-html="group.phone"></span></div>
+                                                <div ng-if="group.contact_website"> <span class="desc_title">Website:</span><a target="_blank" ng-href="{{group.contact_website}}"><span ng-bind-html="group.contact_website"></span></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="single-main-content">
+                                            <div class="time-category single-time job-post-time"> 
+                                                <span class="time">{{group.date_modified|timecalculator:group.posted_date}} | </span>
+                                                <span class="catgory"> {{group.category_title}}</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </ion-item>
+                            </div>
+                        </ion-list>  
+                    </ion-content>
+                </ion-nav-view> 
+            </ion-tab>
+        </ion-tabs>
+    </ion-pane>
+    <!--</ion-content>-->
+    <!--    <ion-footer-bar class="bar bar-hp bar-footer" align-title="left">
+            <h1 class="title">Your Credit Balance: 200pts</h1>
+        </ion-footer-bar>-->
+</ion-view>

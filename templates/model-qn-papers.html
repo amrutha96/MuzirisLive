@@ -1,0 +1,44 @@
+<ion-view view-title="Model Question Papers" align-title="left" class="model-qn-paper">
+    <ion-nav-buttons side="left">
+        <button class="button ion-android-arrow-back button-clear back-button" ng-click="myGoBack();"></button>
+        <!--<h4 class="food-name">Food Menu</h4>-->
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear button-light username"><span></span><i class="custom_icon icon ion-android-more-vertical"></i></button>
+    </ion-nav-buttons>
+    <ion-pane>
+        <ion-content>
+            <div class="model">
+                <div class="question-paper">
+                    <div class="model-qn-pr">
+                        <h5>{{questions.category_title}}</h5>
+                        <span class="year"></span>
+                    </div>
+                </div>
+                <section>    
+                    <ol type="1" class="list-qns">
+
+
+                        <li ng-repeat="question in questions.questions" >
+                            <div class="qns">
+
+                                <p ng-cloak="">{{question.question}}</p>
+                                <div class="ans-options">
+                                    <ul class="answer-list">
+                                        <li ng-repeat="options in question.options_list" ng-class="selected_{{options.is_answer}}_{{$parent.$index}}">
+                                            <p ng-cloak="">{{options.option}}</p>
+                                        </li>
+                                    </ul>
+                                    <div class="view-button">
+                                        <a class="ion-icon view_answer_btn ion-eye" ng-class="viewed_{{$index}}" ng-click="show_answer($index)"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </section>
+            </div>
+        </ion-content>
+    </ion-pane>
+
+</ion-view>

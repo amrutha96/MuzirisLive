@@ -1,0 +1,42 @@
+<ion-view view-title="Search Result" align-title="left" class="search">
+    <ion-pane>
+        <ion-content padding="true">
+            <div class="donor-search withpadding">
+                <div class="main-content-outer">
+                    <h4>{{blood.val}}</h4>
+                    <h5 ng-show="groups">Found on Selected  Location</h5>
+                </div>
+            </div>
+            <div class="donor-list">
+                <div class="blood-content">
+                    <ion-list>
+                        <div class="list-news-home blood-donors">
+                            <ion-item class="card" ng-repeat="group in groups">
+                                <div class="sports-lists">
+                                    <div class="sigle-item-sports">
+                                        <div class="inner-box">
+                                            <div class="content-desc"> 
+                                                <div class="team-data donor-searchlist">
+                                                    <div class="donor">
+                                                        <img src="./img/contact-icon.png">
+                                                    </div>
+                                                    <div class="donor-details">
+                                                        <h5>{{group.donor_name}}</h5>
+                                                        <span>{{group.location_name}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="play-time dial">
+                                                    <button class="button icon ion-android-call" ng-click="popoverquantity(group.vols, group.donor_name, group.donor_phone, group.location_name)"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ion-item>
+                        </div>
+                    </ion-list>  
+                </div>
+            </div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

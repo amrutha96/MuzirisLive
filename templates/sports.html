@@ -1,0 +1,700 @@
+<ion-view view-title="Muziris<span>live</span> News" align-title="left" class="home_page">
+    <ion-pane>
+        <ion-tabs class="tabs-striped tabs-top tabs-background-dark tabs-color-energized">
+            <ion-tab title="Cricket" ui>
+                <ion-nav-view name="Cricket">
+                    <ion-content padding="true">
+                        <div class="sub-tabs">
+                            <ion-tabs class="sub-tab tabs-top">
+                                <ion-tab title="Games">
+                                    <ion-nav-view name="Games">
+                                        <div class="main-content-outer">
+                                            <div class="inner-content">
+                                                <ion-list>
+                                                    <div class="list-news-home" ng-repeat="group in groups">
+                                                        <ion-item ng-click="toggleGroup(group)"  ng-class="{'ng-hide': isGroupShown(group)}">
+                                                            <i class="icon" ng-class="isGroupShown(group) ? '' : ''"></i>
+                                                            <div class="sports-lists">
+                                                                <div class="sigle-item-sports">
+                                                                    <div class="inner-box">
+                                                                        <div class="content-desc"> 
+                                                                            <div class="team-data">
+                                                                                <button class="button ion-icon ion-ios-baseball"></button>
+                                                                                <a href="#"><h5>India Vs England</h5></a>
+                                                                                <span class="lang">7:30 PM | New Delhi, India</span>
+                                                                            </div>
+                                                                            <div class="play-time">
+                                                                                <span class="starts-in">Starts in</span>
+                                                                                <span class="time-play">
+                                                                                    01h 40m
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </ion-item>
+                                                        <ion-item class="item-accordion"                                   
+                                                                  ng-show="isGroupShown(group)">
+                                                            <div class="sports-desc">
+                                                                <div class="sports-main">
+                                                                    <div class="team-data">
+                                                                        <button class="button ion-icon ion-ios-baseball"></button>
+
+                                                                        <a href="#"><h5>India vs England</h5></a>
+                                                                        <span class="lang">7:30 PM | New Delhi, India</span>
+                                                                    </div>
+                                                                    <div class="play-time">
+                                                                        <button class="button ion-android-arrow-back button-clear  ion-chevron-down" ng-click="toggleGroup(group)"></button>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="live-score live-first">
+                                                                    <h2>India</h2>
+                                                                    <div class="score-over">
+                                                                        <span class="score">300/10</span>
+                                                                        <span class="over">50 Over</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="live-score" style="clear: left;">
+                                                                    <h2>England</h2>
+                                                                    <div class="score-over">
+                                                                        <span class="score"><span class="bat">Batting</span>300/10</span>
+                                                                        <span class="over">50 Over</span>
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </div>
+                                                            <!--                                                            <ion-pane>
+                                                                                                                            <ion-tabs class=" bowl-status">
+                                                            
+                                                            
+                                                            
+                                                                                                                                <ion-tab title="Tab 1">
+                                                                                                                                    <ion-nav-view name="tab-tab1">
+                                                                                                                                        <ion-content class="contents">
+                                                                                                                                            <p>01-Lorem Ipsum is simply dummy text of the printing</p>
+                                                                                                                                            <p>01-Lorem Ipsum is simply dummy text of the printing</p>
+                                                                                                                                            <p>01-Lorem Ipsum is simply dummy text of the printing</p>
+                                                                                                                                            <p>01-Lorem Ipsum is simply dummy text of the printing</p>
+                                                            
+                                                                                                                                        </ion-content>
+                                                            
+                                                                                                                                    </ion-nav-view>
+                                                                                                                                </ion-tab>
+                                                            
+                                                            
+                                                                                                                                 Tab 2 
+                                                                                                                                <ion-tab title="Tab2 ">
+                                                                                                                                    <ion-nav-view name="tab-tab2">
+                                                                                                                                        <ion-content class="contents">
+                                                                                                                                            <div class="row headings">                                                                                                                   
+                                                                                                                                                <div class="col-25 col"><span>Batsman</span></div>
+                                                                                                                                                <div class="col-25 col"><span>Bowler</span></div>
+                                                                                                                                                <div class="col"><span>R</span></div>
+                                                                                                                                                <div class="col"><span>B</span></div>
+                                                                                                                                                <div class="col"><span>4s</span></div>
+                                                                                                                                                <div class="col"><span>6s</span></div>
+                                                                                                                                                <div class="col"><span>SR</span></div>
+                                                                                                                                            </div>
+                                                                                                                                            <div class="score-data">
+                                                                                                                                                <div class="row status-list">
+                                                            
+                                                                                                                                                    <div class="col-25 col"><span>S. Afridi</span></div>
+                                                                                                                                                    <div class="col-25 col"><span>S. Afridi</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                </div>
+                                                                                                                                                <div class="row status-list">
+                                                            
+                                                                                                                                                    <div class="col-25 col"><span>S. Afridi</span></div>
+                                                                                                                                                    <div class="col col-25"><span>S. Afridi</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                </div>
+                                                                                                                                                <div class="row status-list">
+                                                            
+                                                                                                                                                    <div class="col-25 col"><span>S. Afridi</span></div>
+                                                                                                                                                    <div class="col-25 col"><span>S. Afridi</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                </div>
+                                                                                                                                                <div class="row status-list">
+                                                                                                                                                    <div class="col-25 col"><span>S. Afridi</span></div>
+                                                                                                                                                    <div class="col-25 col"><span>S. Afridi</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                </div>
+                                                                                                                                                <div class="row status-list">
+                                                                                                                                                    <div class="col-25 col"><span>S. Afridi</span></div>
+                                                                                                                                                    <div class="col-25 col"><span>S. Afridi</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                        </ion-content>
+                                                                                                                                    </ion-nav-view>
+                                                                                                                                </ion-tab>
+                                                                                                                                <ion-tab title="Tab3 ">
+                                                                                                                                    <ion-nav-view name="tab-tab3">
+                                                                                                                                        <ion-content class="contents">
+                                                                                                                                          <div class="row headings">                                                                                                                   
+                                                                                                                                                <div class="col-25 col"><span>Bowler</span></div>
+                                                                                                                                                <div class="col-25 col"><span>Over</span></div>
+                                                                                                                                                <div class="col"><span>Runs</span></div>
+                                                                                                                                                <div class="col"><span>ECO</span></div>
+                                                                                                                                                   </div>
+                                                                                                                                            <div class="score-data">
+                                                                                                                                                <div class="row status-list">
+                                                            
+                                                                                                                                                    <div class="col"><span>S. Afridi</span></div>
+                                                                                                                                                     <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                </div>
+                                                                                                                                                <div class="row status-list">
+                                                            
+                                                                                                                                                  <div class="col"><span>S. Afridi</span></div>
+                                                                                                                                                     <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                </div>
+                                                                                                                                                <div class="row status-list">
+                                                            
+                                                                                                                                                   <div class="col"><span>S. Afridi</span></div>
+                                                                                                                                                     <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                </div>
+                                                                                                                                                <div class="row status-list">
+                                                                                                                                                   <div class="col"><span>S. Afridi</span></div>
+                                                                                                                                                     <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                </div>
+                                                                                                                                                <div class="row status-list">
+                                                                                                                                                    <div class="col"><span>S. Afridi</span></div>
+                                                                                                                                                     <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                    <div class="col"><span>00</span></div>
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                        </ion-content>
+                                                                                                                                    </ion-nav-view>
+                                                                                                                                </ion-tab>
+                                                                                                                            </ion-tabs>
+                                                            
+                                                                                                                        </ion-pane>-->
+
+
+
+
+
+                                                            <!--                                                            <ion-tabs class="batting-status">
+                                                            
+                                                                                                                            <div class="sub-tabs">
+                                                                                                                                <ion-tabs class="sub-tab">
+                                                                                                                                    <ion-tab title="Ball by ball">
+                                                                                                                                        <ion-nav-view name="Ball by ball">
+                                                                                                                                            <p>01-Lorem Ipsum is simply dummy text of the printing</p>
+                                                                                                                                            <p>01-Lorem Ipsum is simply dummy text of the printing</p>
+                                                                                                                                            <p>01-Lorem Ipsum is simply dummy text of the printing</p>
+                                                                                                                                            <p>01-Lorem Ipsum is simply dummy text of the printing</p>
+                                                                                                                                        </ion-nav-view>
+                                                                                                                                    </ion-tab>
+                                                                                                                                    <ion-tab title="Batting Status">
+                                                                                                                                        <ion-nav-view name="Batting Status">
+                                                                                                                                            <ion-content padding="true">
+                                                                                                                                                <p>04-Lorem Ipsum is simply dummy text of the printing</p>
+                                                                                                                                                <p>05-Lorem Ipsum is simply dummy text of the printing</p>
+                                                                                                                                                <p>06-Lorem Ipsum is simply dummy text of the printing</p>
+                                                                                                                                                <p>07-Lorem Ipsum is simply dummy text of the printing</p>
+                                                            
+                                                                                                                                            </ion-content>
+                                                                                                                                        </ion-nav-view> 
+                                                                                                                                    </ion-tab>
+                                                                                                                                    <ion-tab title="Bowling Status"  class="odi">
+                                                                                                                                        <ion-nav-view name="Bowling Status">
+                                                                                                                                            <ion-content padding="true">
+                                                                                                                                                eeewry hewrywerewer8wu9ew8uew9erw erwrew 9er9898
+                                                                                                                                            </ion-content>
+                                                                                                                                        </ion-nav-view> 
+                                                                                                                                    </ion-tab>
+                                                            
+                                                                                                                                </ion-tabs>
+                                                                                                                            </div>
+                                                                                                                        </ion-tabs>-->
+
+                                                        </ion-item>
+                                                    </div>
+                                                </ion-list>  
+                                            </div>
+                                        </div>
+
+                                    </ion-nav-view>
+
+                                </ion-tab>
+
+                                <ion-tab title="Ranking Status"  class="odi">
+                                    <ion-nav-view name="Ranking Status">
+                                        <div class="main-content-outer">
+                                            <div class="inner-content">
+                                                <ion-list>
+                                                    <div class="list-news-home" ng-repeat="group in groups">
+                                                        <ion-item ng-click="toggleGroup(group)"  ng-class="{'ng-hide': isGroupShown(group)}">
+                                                            <i class="icon" ng-class="isGroupShown(group) ? '' : ''"></i>
+                                                            <div class="sports-lists">
+                                                                <div class="sigle-item-sports">
+                                                                    <div class="inner-box">
+                                                                        <div class="content-desc"> 
+                                                                            <div class="team-data list-match">
+                                                                                <a href="#"><h5>Twenty20</h5></a>
+                                                                            </div>
+                                                                            <div class="play-time">
+                                                                                <button class="button ion-android-arrow-back button-clear  ion-chevron-up" ng-click="toggleGroup(group)"></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </ion-item>
+                                                        <ion-item class="item-accordion status"                                   
+                                                                  ng-show="isGroupShown(group)">
+                                                            <div class="sports-desc">
+                                                                <div class="sports-main">
+                                                                    <div class="team-data">
+                                                                        <a href="#"><h5>Twenty20</h5></a>
+                                                                    </div>
+                                                                    <div class="play-time">
+                                                                        <button class="button ion-android-arrow-back button-clear  ion-chevron-down" ng-click="toggleGroup(group)"></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row headings">                                                                                                                      <div class="col-33 col"><span>Team</span></div>
+                                                                <div class="col"><span>Matches</span></div>
+                                                                <div class="col"><span>Points</span></div>
+                                                                <div class="col"><span>Rating</span></div>
+                                                            </div>
+                                                            <div class="score-data">
+                                                                <div class="row status-list">
+                                                                    <div class="col-33 col"><span>Australia</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>0000</span></div>
+                                                                    <div class="col"><span>000</span></div>
+                                                                </div>
+                                                                <div class="row status-list">
+                                                                    <div class="col-33 col"><span>England</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>0000</span></div>
+                                                                    <div class="col"><span>000</span></div>
+                                                                </div>
+                                                                <div class="row status-list">
+                                                                    <div class="col-33 col"><span>South Africa</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>0000</span></div>
+                                                                    <div class="col"><span>000</span></div>
+                                                                </div>
+                                                                <div class="row status-list">
+                                                                    <div class="col-33 col"><span>Pakistan</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>0000</span></div>
+                                                                    <div class="col"><span>000</span></div>
+                                                                </div>
+                                                                <div class="row status-list">
+                                                                    <div class="col-33 col"><span>West Indies</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>0000</span></div>
+                                                                    <div class="col"><span>000</span></div>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                        </ion-item>
+                                                    </div>
+                                                </ion-list>  
+                                            </div>
+                                        </div>
+                                    </ion-nav-view> 
+                                </ion-tab>
+
+                            </ion-tabs>
+                        </div>
+                    </ion-content>
+                </ion-nav-view>
+            </ion-tab>
+
+            <ion-tab title="Football" >
+                <ion-nav-view name="Football">
+                    <ion-content padding="true">
+                        <div class="sub-tabs">
+                            <ion-tabs class="sub-tab tabs-top">
+
+                                <ion-tab title="Games">
+                                    <ion-nav-view name="Games">
+                                        <div class="main-content-outer football">
+                                            <div class="inner-content">
+                                                <ion-list class="foot-list">
+                                                    <div class="list-news-home" ng-repeat="group in groups">
+                                                        <ion-item ng-click="toggleGroup(group)"  ng-class="{'ng-hide': isGroupShown(group)}">
+                                                            <i class="icon" ng-class="isGroupShown(group) ? '' : ''"></i>
+                                                            <div class="sports-lists">
+                                                                <div class="sigle-item-sports">
+                                                                    <div class="inner-box">
+                                                                        <div class="content-desc"> 
+                                                                            <div class="team-data">
+                                                                                <a href="#"><h5>Champions League</h5></a>
+                                                                            </div>
+                                                                            <div class="play-time">
+                                                                                <button class="button ion-android-arrow-back button-clear  ion-chevron-up" ></button>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </ion-item>
+                                                        <ion-item class="item-accordion football"                                   
+                                                                  ng-show="isGroupShown(group)">
+                                                            <div class="sports-desc">
+                                                                <div class="sports-main">
+                                                                    <div class="team-data">
+                                                                        <a href="#"><h5>Champions League</h5></a>
+                                                                    </div>
+                                                                    <div class="play-time">
+                                                                        <button class="button ion-android-arrow-back button-clear  ion-chevron-down" ng-click="toggleGroup(group)"></button>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="live-score spt">
+                                                                    <span class="live-first"><h2>Arsenal F.C.</h2>
+                                                                        <span class="plname">- Player Name</span>
+                                                                    </span>
+                                                                    <div class="score-over">
+                                                                        <span class="score foot-score">1 - 3</span><br>
+                                                                        <span class="time-of">60:34</span>
+                                                                    </div>
+                                                                    <span class="live-first"><h2>Arsenal F.C.</h2>
+                                                                        <span class="plname">- Player Name</span><br>
+                                                                        <span class="plname">- Player Name</span>
+                                                                    </span>
+                                                                </div>
+
+
+
+
+                                                            </div>
+
+
+
+                                                        </ion-item>
+                                                    </div>
+                                                </ion-list>  
+                                            </div>
+                                        </div>
+
+                                    </ion-nav-view>
+
+                                </ion-tab>
+
+                                <ion-tab title="Standings"  class="odi">
+                                    <ion-nav-view name="Standings">
+                                        <div class="main-content-outer">
+                                            <div class="inner-content">
+                                                <ion-list>
+                                                    <div class="list-news-home" ng-repeat="group in groups">
+                                                        <ion-item ng-click="toggleGroup(group)"  ng-class="{'ng-hide': isGroupShown(group)}">
+                                                            <i class="icon" ng-class="isGroupShown(group) ? '' : ''"></i>
+                                                            <div class="sports-lists">
+                                                                <div class="sigle-item-sports">
+                                                                    <div class="inner-box">
+                                                                        <div class="content-desc"> 
+                                                                            <div class="team-data list-match">
+                                                                                <a href="#"><h5>Twenty20</h5></a>
+                                                                            </div>
+                                                                            <div class="play-time">
+                                                                                <button class="button ion-android-arrow-back button-clear  ion-chevron-up" ng-click="toggleGroup(group)"></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </ion-item>
+                                                        <ion-item class="item-accordion status"                                   
+                                                                  ng-show="isGroupShown(group)">
+                                                            <div class="sports-desc">
+                                                                <div class="sports-main">
+                                                                    <div class="team-data">
+                                                                        <a href="#"><h5>Twenty20</h5></a>
+                                                                    </div>
+                                                                    <div class="play-time">
+                                                                        <button class="button ion-android-arrow-back button-clear  ion-chevron-down" ng-click="toggleGroup(group)"></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row headings">                                                                                                                   
+                                                                <div class="col-25 col"><span>Team</span></div>
+                                                                <div class="col"><span>P</span></div>
+                                                                <div class="col"><span>W</span></div>
+                                                                <div class="col"><span>L</span></div>
+                                                                <div class="col"><span>DR</span></div>
+                                                                <div class="col"><span>GF</span></div>
+                                                                <div class="col"><span>GA</span></div>
+                                                                <div class="col"><span>PT</span></div>
+                                                            </div>
+                                                            <div class="score-data">
+                                                                <div class="row status-list">
+                                                                    <div class="col-25 col"><span>Australia</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                </div>
+                                                                <div class="row status-list">
+                                                                    <div class="col-25 col"><span>England</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                </div>
+                                                                <div class="row status-list">
+                                                                    <div class="col-25 col"><span>South Africa</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                </div>
+                                                                <div class="row status-list">
+                                                                    <div class="col-25 col"><span>Pakistan</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                </div>
+                                                                <div class="row status-list">
+                                                                    <div class="col-25 col"><span>West Indies</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                    <div class="col"><span>00</span></div>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </ion-item>
+                                                    </div>
+                                                </ion-list>  
+                                            </div>
+                                        </div>
+                                    </ion-nav-view> 
+                                </ion-tab>
+
+                            </ion-tabs>
+                        </div>
+                    </ion-content>
+                </ion-nav-view> 
+            </ion-tab>
+
+            <ion-tab title="Tennis" >
+                <ion-nav-view name="Tennis">
+                    <ion-content padding="true">
+                        <div class="sub-tabs">
+                            <ion-tabs class="sub-tab tabs-top">
+
+                                <ion-tab title="Games">
+                                    <ion-nav-view name="Games">
+                                        <div class="main-content-outer">
+                                            <div class="inner-content">
+                                                <ion-list>
+                                                    <div class="list-news-home" ng-repeat="group in groups">
+                                                        <ion-item ng-click="toggleGroup(group)"  ng-class="{'ng-hide': isGroupShown(group)}">
+                                                            <i class="icon" ng-class="isGroupShown(group) ? '' : ''"></i>
+                                                            <div class="sports-lists">
+                                                                <div class="sigle-item-sports">
+                                                                    <div class="inner-box">
+                                                                        <div class="content-desc"> 
+                                                                            <div class="team-data">
+                                                                                <a href="#"><h5>India Vs England</h5></a>
+                                                                                <span class="lang">7:30 PM | New Delhi, India</span>
+                                                                            </div>
+                                                                            <div class="play-time">
+                                                                                <span class="starts-in">Starts in</span>
+                                                                                <span class="time-play">
+                                                                                    01h 40m
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </ion-item>
+                                                        <ion-item class="item-accordion"                                   
+                                                                  ng-show="isGroupShown(group)">
+                                                            <div class="sports-desc">
+                                                                <div class="sports-main">
+                                                                    <div class="team-data">
+                                                                        <a href="#"><h5>India vs England</h5></a>
+                                                                        <span class="lang">7:30 PM | New Delhi, India</span>
+                                                                    </div>
+                                                                    <div class="play-time">
+                                                                        <button class="button ion-android-arrow-back button-clear  ion-chevron-down" ng-click="toggleGroup(group)"></button>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="live-score live-first">
+                                                                    <h2>India</h2>
+                                                                    <div class="score-over">
+                                                                        <span class="score">300/10</span>
+                                                                        <span class="over">50 Over</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="live-score" style="clear: left;">
+                                                                    <h2>England</h2>
+                                                                    <div class="score-over">
+                                                                        <span class="score"><span class="bat">Batting</span>300/10</span>
+                                                                        <span class="over">50 Over</span>
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </div>
+
+
+
+                                                        </ion-item>
+                                                    </div>
+                                                </ion-list>  
+                                            </div>
+                                        </div>
+
+                                    </ion-nav-view>
+
+                                </ion-tab>
+
+                                <ion-tab title="Standings" class="odi">
+                                    <ion-nav-view name="Standings">
+                                        <div class="main-content-outer">
+                                            <div class="inner-content">
+                                                <ion-list>
+                                                    <div class="list-news-home" ng-repeat="group in groups">
+                                                        <ion-item ng-click="toggleGroup(group)"  ng-class="{'ng-hide': isGroupShown(group)}">
+                                                            <i class="icon" ng-class="isGroupShown(group) ? '' : ''"></i>
+                                                            <div class="sports-lists">
+                                                                <div class="sigle-item-sports">
+                                                                    <div class="inner-box">
+                                                                        <div class="content-desc"> 
+                                                                            <div class="team-data list-match">
+                                                                                <a href="#"><h5>Twenty20</h5></a>
+                                                                                <span class="lang">7:30 PM | New Delhi, India</span>
+
+                                                                            </div>
+                                                                            <div class="play-time">
+                                                                                <button class="button ion-android-arrow-back button-clear  ion-chevron-up" ng-click="toggleGroup(group)"></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </ion-item>
+                                                        <ion-item class="item-accordion status tennis"                                   
+                                                                  ng-show="isGroupShown(group)">
+                                                            <div class="sports-desc">
+                                                                <div class="sports-main">
+                                                                    <div class="team-data">
+                                                                        <a href="#"><h5>Twenty20</h5></a>
+                                                                        <span class="lang">7:30 PM | New Delhi, India</span>
+
+                                                                    </div>
+                                                                    <div class="play-time">
+                                                                        <button class="button ion-android-arrow-back button-clear  ion-chevron-down" ng-click="toggleGroup(group)"></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row headings head-tennis"> 
+                                                                <div class="col-33 col"><span>Players</span></div>
+                                                                <div class="col"><span>Set 1</span></div>
+                                                                <div class="col"><span>Set 2</span></div>
+                                                                <div class="col"><span>Games</span></div>
+                                                                <div class="col"><span class="points">Points</span></div>
+                                                            </div>
+                                                            <div class="score-data set">
+                                                                <div class="row status-list">
+                                                                    <div class="col-33 col"><p>David Goffin</p></div>
+                                                                    <div class="col score-val"><span>6</span></div>
+                                                                    <div class="col score-val"><span>5</span></div>
+                                                                    <div class="col score-val"><span>3</span></div>
+                                                                    <div class="col score-val"><span class="points">30</span></div>
+                                                                </div>
+                                                                <div class="row status-list set">
+                                                                    <div class="col-33 col"><p>Milos Roinc</p></div>
+                                                                    <div class="col score-val"><span>6</span></div>
+                                                                    <div class="col score-val"><span>5</span></div>
+                                                                    <div class="col score-val"><span>3</span></div>
+                                                                    <div class="col score-val"><span class="points">30</span></div>
+                                                                </div>
+
+                                                            </div>
+
+
+
+                                                        </ion-item>
+                                                    </div>
+                                                </ion-list>  
+                                            </div>
+                                        </div>
+                                    </ion-nav-view> 
+                                </ion-tab>
+
+                            </ion-tabs>
+                        </div>
+                    </ion-content>
+                </ion-nav-view> 
+            </ion-tab>
+            <ion-tab title="World Championship">
+                <ion-nav-view name="World Championship">
+                    <ion-content padding="true">
+
+                    </ion-content>
+                </ion-nav-view> 
+            </ion-tab>
+
+        </ion-tabs>
+    </ion-pane>
+    <!--</ion-content>-->
+    <!--    <ion-footer-bar class="bar bar-hp bar-footer" align-title="left">
+            <h1 class="title">Your Credit Balance: 200pts</h1>
+        </ion-footer-bar>-->
+</ion-view>

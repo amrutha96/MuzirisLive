@@ -1,0 +1,38 @@
+<ion-view view-title="{{groups[0].movie_name}}" align-title="left" class="model-qn-paper">
+    <ion-nav-buttons side="left">
+        <button class="button ion-android-arrow-back button-clear back-button" ng-click="myGoBack();"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear button-light username" ng-click="shareOnApps();"><span></span><i class="custom_icon icon ion-android-share-alt"></i></button>
+        <button class="button button-icon button-clear button-light username"><span></span><i class="custom_icon icon ion-android-more-vertical"></i></button>
+    </ion-nav-buttons>
+    <ion-content class="theater theater-single">
+        <div class="main-content-outer theater-list">
+            <div class="inner-content">
+                <img class="img-responsive"  ng-src="{{base_url + groups[0].featured}}"  />
+                <a ng-href="#" class="detail-link"> 
+                    <span class="uicon">U</span> 
+                    <div class="movie-data">
+                        <span class="film-name">{{groups[0].movie_name}}</span>
+                        <span class="datee ng-binding"><i class="icon ion-heart"></i><span>{{groups[0].rating}}</span></span>
+                        <br>
+                        <span class="lang">{{groups[0].language}}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <section class="list-theater">    
+            <ul class="view-list">
+
+
+                <li ng-repeat="group in groups" >
+                    <!--<a ng-href="#">-->
+                    <span class="t-name"> {{group.showtimes[0].theatre}}</span><span class="t-place">{{group.location}}</span><a ng-if="group.phone" ng-href="tel:{{group.phone}}" class="t-call ng-binding ion-android-call"></a><a ng-if="group.email" ng-href="tel:{{group.email}}" class="t-email ng-binding ion-android-mail"></a>
+                        <p class="t-time"><span  ng-repeat="showtime in group.showtimes">&nbsp;{{showtime.show}}&nbsp;<span ng-hide="(group.showtimes.length - 1) == $index">|</span></span></p>
+                    <!--</a>-->
+                </li>
+
+            </ul>
+        </section>
+    </ion-content>
+</ion-view>

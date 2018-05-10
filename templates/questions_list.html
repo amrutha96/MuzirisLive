@@ -1,0 +1,35 @@
+<ion-view view-title="Model Question Papers" align-title="left" class="home_page">
+    <ion-nav-view name="Model Question Papers">
+        <ion-content padding="true" class="model-qn">
+            <!--- start block -->
+            <div class="model_questionlist card" ng-repeat="paper in  papers">
+                <h4>{{paper.category_title}}</h4>
+                <ion-list>
+                    <div class="list-news-home">
+                        <ion-item ng-href="#/app/modelQuestion/{{paper.id}}">
+                            <div class="qn-list">
+                                <div class="sigle-item-desc">
+                                    <div class="job-details">
+                                        <div class="inner-box">
+                                            <div class="content-desc">
+                                                <p>{{paper.category_desc}}</p>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="detail-view-dwd">
+                                        <button class="button disabled  ion-arrow-right-b button-clear"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </ion-item>
+                    </div>
+                </ion-list>
+            </div>   
+            <!--- end block -->
+        </ion-content>
+    </ion-nav-view> 
+    <!--</ion-content>-->
+    <!--    <ion-footer-bar class="bar bar-hp bar-footer" align-title="left">
+            <h1 class="title">Your Credit Balance: 200pts</h1>
+        </ion-footer-bar>-->
+</ion-view>

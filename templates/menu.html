@@ -1,0 +1,84 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content ng-drag-content="true">
+        <ion-nav-bar class="bar bar-hp" align-title="left">
+            <!--            <ion-nav-back-button>
+                        </ion-nav-back-button>-->
+
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear button-light ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear button-light username"><span></span><i class="custom_icon icon ion-android-more-vertical"></i></button>
+            </ion-nav-buttons>
+
+        </ion-nav-bar>
+
+
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" class="sidemenucontent">
+        <ion-header-bar class="bar bar-hp-gray nopadding">
+            <img src="img/logo.png">
+            <div class="menu-bottom">
+            </div>
+        </ion-header-bar>
+        <ion-content>
+            <ion-list class="menulist">
+                <ion-item class="hp-menu-item place_intent" menu-close href="#/app/home">
+                    <i class="ion-icon ion-ios-list-outline"></i> News
+
+                </ion-item>
+                <ion-item class="hp-menu-item place_intent" menu-close href="#/app/jobs">
+                    <i class="ion-icon ion-ios-briefcase"></i>   Jobs
+
+                </ion-item>
+                <ion-item class="hp-menu-item place_intent" menu-close href="#/app/modelQuestionList">
+                    <i class="ion-icon ion-help-circled"></i>   Model Questions
+                </ion-item>
+                <!--                <ion-item class="hp-menu-item intent_status" menu-close href="#/app/sports">
+                                    <i class="ion-icon ion-android-bicycle"></i>   Sports
+                                </ion-item>-->
+                <ion-item class="hp-menu-item track_transport" menu-close href="#/app/blood">
+
+                    <i class="ion-icon ion-waterdrop"></i>  Blood Donor
+                </ion-item>
+                <ion-item class="hp-menu-item contact_icon" menu-close href="#/app/govt">
+
+                    <i class="ion-icon ion-android-document"></i>   Govt. Forms
+                </ion-item>
+                <ion-item class="hp-menu-item settings_icon" menu-close href="#/app/theater-release">
+                    <i class="ion-icon ion-android-film"></i>   Movie Releases
+
+                </ion-item>
+                <ion-item class="hp-menu-item settings_icon" menu-close href="#/app/directoryindex">
+                    <i class="ion-icon ion-ios-person"></i>   Directory
+
+                </ion-item>
+
+            </ion-list>
+            <!--<div style="text-align: center;float: left;clear: both;" class="copy">  <span class="copy-right">Copyrighte © 2016 . All rights reserved</span></div>-->
+        </ion-content>
+
+
+
+    </ion-side-menu>
+    <!-- <ion-footer-bar align-title="left" class="bar bar-hp nopadding bar-footer" ng-show="groups">
+        <ion-slide-box ng-show="groups" class="footer_slider" on-slide-changed="slideHasChanged($slideIndex)" does-continue="true" autoplay="true" slide-interval="3000" show-pager="false">
+                        <ion-slide ng-repeat="group in groups" ng-init="updateSlider()">
+                            <img ng-show="group.fullscreen_sm" ng-click="popoverquantity($index)" class="img-responsive" ng-src="{{base_url + group.banner_sm}}">
+                            <img ng-hide="group.fullscreen_sm" ng-clicng-show="group.fullscreen_sm"k="popoverquantity($index)" class="img-responsive" ng-src="{{base_url + group.banner_sm}}">
+                        </ion-slide>            
+<!--            <ion-slide>
+                <img   class="img-responsive" ng-src="http://placehold.it/1000x100">
+            </ion-slide>-->
+<!--            <ion-slide>
+                <img  class="img-responsive" ng-src="http://placehold.it/1000x101">
+            </ion-slide>
+            <ion-slide>
+                <img  class="img-responsive" ng-src="http://placehold.it/1000x102">
+            </ion-slide>            
+        </ion-slide-box>
+    </ion-footer-bar> -->
+
+</ion-side-menus>

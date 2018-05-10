@@ -1,0 +1,30 @@
+<ion-view view-title="Theater Release" align-title="left" class="model-qn-paper">
+
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear button-light username"><span></span><i class="custom_icon icon ion-android-more-vertical"></i></button>
+    </ion-nav-buttons>
+    <ion-content class="theater" ng-controller="theaterReleaseController">
+        <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="doRefresh()">
+        </ion-refresher>
+        <ion-list>
+            <div class="list-news-home" ng-repeat="group in groups">
+                <div class="main-content-outer theater-list">
+                    <div class="inner-content">
+                        <img class="img-responsive" ng-src="{{base_url + group.thumb}}" loading-src="img/default-image.jpg" />
+                        <a ng-href="#/app/theater-release/{{group.movie_id}}" class="detail-link"> 
+                            <span class="uicon">U</span> 
+                            <div class="movie-data">
+                                <span class="film-name">{{group.movie_name}}</span>
+                                <span class="datee ng-binding"><i class="icon ion-heart"></i><span>{{group.rating}}</span></span>
+                                <br>
+                                <span class="lang">{{group.language}}</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </ion-list>     
+    </ion-content>
+</ion-view>

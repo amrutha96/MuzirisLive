@@ -1,0 +1,46 @@
+<ion-view view-title="Govt Forms" align-title="left" class="single_page">
+
+
+    <!--<ion-tabs tabs-swipable class="tabs-striped tabs-top tabs-background-dark tabs-color-energized slide-left-right" ng-class="{reverse: currentTab < previousTab}">-->
+
+    <!--<ion-tab title="{{category.category_title}}" ng-repeat="category in categories" ng-init="cat.category_id=category.id">-->
+    <!--<ion-nav-view>-->
+
+    <ion-content padding="true" class="">
+
+        <ion-list>
+            <label class="item-input-wrapper formSearch">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input class="search_bar" type="search" placeholder="Search" ng-model="searchText.title">
+            </label>
+
+            <div class="list-news-home govt-box">
+                <ion-item ng-repeat="form in forms|filter:searchText">
+
+                    <div class="govt">
+                        <h3>{{form.title}}</h3>
+                        <button class="button button-calm" ng-click="showFormPrev(form.preview, form.title)">
+                            Preview
+                        </button>
+                        <button class="button button-calm" ng-click="sendFormToMail(form.title, form.id)">
+                            Sent
+                        </button>
+                    </div>
+
+                </ion-item>
+
+            </div>
+        </ion-list>  
+    </ion-content>
+    <!--</ion-nav-view>-->
+    <!--</ion-tab>-->
+
+
+
+
+    <!--</ion-tabs>-->
+    <!--</ion-content>-->
+    <!--    <ion-footer-bar class="bar bar-hp bar-footer" align-title="left">
+            <h1 class="title">Your Credit Balance: 200pts</h1>
+        </ion-footer-bar>-->
+</ion-view>

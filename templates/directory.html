@@ -1,0 +1,138 @@
+<ion-view view-title="Directory Search" align-title="left" class="single_page">
+    <ion-nav-buttons side="left">
+        <button class="button ion-android-arrow-back button-clear back-button" ng-click="myGoBack();"></button>
+        <!--<h4 class="food-name">Food Menu</h4>-->
+    </ion-nav-buttons>
+    <ion-pane>
+        <tab-slide-box tab="{{tab_index}}" class="directory"> 
+            <div class="tsb-icons tabs-striped tabs-top tabs-background-dark tabs-color-energized directory">
+                <div class="tsb-ic-wrp tsb-ic-wrp tab-nav tabs">
+                    <ion-scroll direction="x" class="tsb-hscroll">
+                        <a href="javascript:;" class="scroll-tab-item" on-finish-render="test()">
+                            <span class="scroll-tab-title">
+                                All
+                            </span>
+                        </a>
+                        <a href="javascript:;" class="scroll-tab-item" ng-repeat="category in categories" on-finish-render="test()">
+                            <span class="scroll-tab-title">
+                                {{category.category_title}}
+                            </span>
+                        </a>
+                    </ion-scroll>
+                </div>
+            </div>
+            <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+                <ion-slide ng-init="updateSlider()">
+                    <ion-scroll style="height:90%" delegate-handle="slide1Scroll" >
+                        <div class="donor-search">
+                            <div class="main-content-outer">
+                                <div class="stand">
+                                    <h4>ALL</h4>
+                                    <div class="search_container"><i class="icon ion-search placeholder-icon "></i>
+                                        <input type="search" class="ng-pristine ng-valid  ng-touched" placeholder="Search" ng-model="searchText.name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-content-outer donor-list">
+                                <div class="blood-content">
+                                    <ion-list>
+                                        <div class="list-news-home blood-donors">
+                                            <ion-item class="card" ng-repeat="contact in filteredEntries = (contacts| filter:searchText)">
+                                                <div class="sports-lists">
+                                                    <div class="sigle-item-sports">
+                                                        <div class="inner-box">
+                                                            <div class="content-desc"> 
+                                                                <div class="team-data donor-searchlist">
+
+                                                                    <div class="donor" ng-style="{{contact.colorClass}}">
+                                                                        <span class="directory_thumb" ng-value="B">{{contact.name.charAt(0)}}</span>
+                                                                    </div>
+                                                                    <div class="donor-details">
+                                                                        <h5>{{contact.name}}</h5>
+                                                                        <span>{{contact.phone}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="play-time dial">
+                                                                    <a href="tel:{{contact.phone}}">
+                                                                        <i class="button icon ion-android-call"></i>
+                                                                    </a>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>                       
+
+                                            </ion-item>
+                                            <ion-item style="height: 10px;"></ion-item>
+                                        </div>
+
+                                    </ion-list>  
+                                </div>
+                            </div>
+
+                        </div>
+                    </ion-scroll>
+                </ion-slide>
+                <ion-slide ng-repeat="category in categories" ng-init="updateSlider()">
+                    <ion-scroll style="height:90%" delegate-handle="slide1Scroll" >
+                        <div class="donor-search">
+                            <div class="main-content-outer">
+                                <div class="stand">
+                                    <h4>{{category.category_title}}</h4>
+                                    <div class="search_container"><i class="icon ion-search placeholder-icon "></i>
+                                        <input type="search" class="ng-pristine ng-valid  ng-touched" placeholder="Search" ng-model="searchText.name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-content-outer donor-list">
+                                <div class="blood-content">
+                                    <ion-list>
+                                        <div class="list-news-home blood-donors">
+                                            <ion-item class="card" ng-repeat="contact in filteredEntries = (contacts| filter:{ category_id: category.id} | filter:searchText)">
+                                                <i class="icon"></i>
+                                                <div class="sports-lists">
+                                                    <div class="sigle-item-sports">
+                                                        <div class="inner-box">
+                                                            <div class="content-desc"> 
+                                                                <div class="team-data donor-searchlist">
+                                                                    <div class="donor" ng-style="{{contact.colorClass}}">
+                                                                        <span class="directory_thumb" ng-value="B">{{contact.name.charAt(0)}}</span>
+                                                                    </div>
+                                                                    <div class="donor-details">
+                                                                        <h5>{{contact.name}}</h5>
+                                                                        <span>{{contact.phone}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="play-time dial">
+                                                                    <a href="tel:{{contact.phone}}">
+                                                                        <i class="button icon ion-android-call"></i>
+                                                                    </a>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>                       
+
+                                            </ion-item>
+                                            <ion-item style="height: 10px;"></ion-item>
+                                        </div>
+
+                                    </ion-list>  
+                                </div>
+                            </div>
+
+                        </div>
+                    </ion-scroll>
+                </ion-slide>
+                <!--</ion-tab>-->
+            </ion-slide-box>
+        </tab-slide-box>
+
+    </ion-pane>
+    <!--</ion-content>-->
+    <!--    <ion-footer-bar class="bar bar-hp bar-footer" align-title="left">
+            <h1 class="title">Your Credit Balance: 200pts</h1>
+        </ion-footer-bar>-->
+</ion-view>

@@ -1,0 +1,77 @@
+<ion-view view-title="Blood Donors" align-title="left" class="blood">
+    <ion-pane>
+
+        <ion-content padding="true">
+
+
+            <div class="list-news-home blood-list">
+                <div class="main-content-outer">
+                    <div class="inner-content">
+                        <img class="img-responsive" src="./img/bloodlist.png">
+
+                    </div>
+                </div>
+            </div>
+            <div class="main-content-outer">
+                <div class="blood-content">
+                    <ion-list>
+                        <div class="list-news-home blood-donors">
+                            <ion-item>
+                                <div class="sports-lists">
+                                    <div class="sigle-item-sports">
+                                        <div class="inner-box">
+                                            <div class="content-desc"> 
+                                                <div class="team-data">
+                                                    <span class="bd-group">Blood Group</span>
+                                                    <div class="blood-group" ng-click="popoverquantity2($event)">
+                                                        <a ng-click="popoverquantity2($event)"><i class="ion-icon ion-waterdrop"></i>&nbsp;&nbsp;<span>{{group_selected.val}}</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="play-time blood-select">
+                                                    <button class="button ion-android-arrow-back button-clear  ion-chevron-down" ng-click="popoverquantity2($event)" style="margin-top: 16px;"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sports-lists">
+                                    <div class="sigle-item-sports">
+                                        <div class="inner-box">
+                                            <div class="content-desc"> 
+                                                <div class="team-data">
+                                                    <div class="blood-group" ng-click="popoverquantity1($event)">
+                                                        <a ng-click="popoverquantity1($event)"><i class="ion-icon ion-location" style="font-size: 24px;"></i>&nbsp;&nbsp;<span>{{location_selected.location_name}}</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="play-time blood-select">
+                                                    <button class="button ion-android-arrow-back button-clear  ion-chevron-down" ng-click="popoverquantity1($event)"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+
+                        </div>
+                        <div class="govt blood-search">                             
+
+                            <a class="button button-calm" ng-click="searchDonors();">
+                                Search
+                            </a>
+                        </div>
+                    </ion-list>  
+                </div>
+            </div>
+
+
+        </ion-content>
+
+    </ion-pane>
+    <!--</ion-content>-->
+    <!--    <ion-footer-bar class="bar bar-hp bar-footer" align-title="left">
+            <h1 class="title">Your Credit Balance: 200pts</h1>
+        </ion-footer-bar>-->
+</ion-view>
